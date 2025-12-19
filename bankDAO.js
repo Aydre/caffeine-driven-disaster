@@ -1,7 +1,7 @@
-const BankDAO ={}
-
-function retrieveBalance(BankDAO, accountId) {
+const BankDAO ={
+retrieveBalance(accountId) {
     console.log('Retrieve balance');
 }
+}
 
-module.exports = retrieveBalance;
+module.exports = BankDAO;

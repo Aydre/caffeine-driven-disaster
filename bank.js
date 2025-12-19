@@ -1,10 +1,8 @@
-const retrieveBalance= require('./bankDAO');
-const bank = {};
+const bankDAO= require('./bankDAO');
+const bank = {
+    getBalance(accountId) {
+    return bankDAO.retrieveBalance(accountId);
+    }
+};
 
-function getBalance(bank, accountId) {
-    retrieveBalance(bank,accountId);
-}
-
-getBalance(bank, 12345);
-
-module.exports = getBalance;
+module.exports = bank;

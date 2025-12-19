@@ -7,7 +7,7 @@ const ammount = 1000;
 const error = new Error('Transfer failed');
 
 afterEach(() => {
-    jest.clearAllMocks();
+    jest.restoreAllMocks();
 });
 
 test('retrieveBalance is called', () => {

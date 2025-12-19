@@ -3,6 +3,8 @@ const wrongLengthPasswords = "a"*7;
 const validLengthPasswords = "aaaaaaa1";
 const wrongDigitPasswords = "abcdefgh";
 const validDigitPasswords = "abcd3fgh";
+const wrongLetterPasswords = "12345678";
+const validLetterPasswords = "a0012345";
 
 test('password with less than 8 characters should be invalid', () => {
     const result = validatePassword(wrongLengthPasswords);
@@ -25,3 +27,13 @@ test('password with at least one digit should be valid', () => {
     const result = validatePassword(validDigitPasswords);
     expect(result).toBe(true);
 });
+
+test('password with no letter should be invalid', () => {
+    const result = validatePassword(wrongLetterPasswords);
+    expect(result).toBe(false)
+})
+
+test('password with at least one letter should be valid', () => {
+    const result = validatePassword(validLetterPasswords);
+    expect(result).toBe(true)
+})

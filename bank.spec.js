@@ -40,6 +40,7 @@ test('transferMoney calls debitAccount with correct parameters', async () => {
 });
 
 test('transfert fails and debitAccount is not called', async () => {
+    jest.spyOn(bankDAO, 'debitAccount');
     jest.spyOn(bankTransfer, 'transfer').mockRejectedValue(error);
     await bank.transferMoney(accountId, ammount);
     expect(bankDAO.debitAccount).not.toHaveBeenCalled();

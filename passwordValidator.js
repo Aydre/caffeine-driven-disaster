@@ -1,7 +1,7 @@
-function validatePassword(password){
-    if(password.length < 8) return false;
-    if(!/\d/.test(password)) return false;
-    if(!/[a-zA-Z]/.test(password)) return false;
+function validatePassword(password,minArgs) {
+    if(password.length < minArgs.minLength) return false;
+    if((password.match(/\d/g) || []).length < minArgs.minNumbers) return false;
+    if((password.match(/[a-zA-Z]/g) || []).length < minArgs.minLetters) return false;
     return true;
 }
 

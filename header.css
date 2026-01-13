@@ -1,0 +1,9 @@
+
+header {
+    color : var(--main-color);
+    border : var(--border-width) var(--border-style) var(--border-color);
+    font-size : clamp(20px, 4em, 80px);
+    text-align : var(--align-header);
+    block-size: 10rem;
+    padding : var(--space-header);
+}
